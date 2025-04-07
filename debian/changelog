@@ -1,3 +1,9 @@
+kglobalacceld (6.2.1-1deepin1) unstable; urgency=medium
+
+  * update Replaces libkf5globalaccel version.
+
+ -- lichenggang <lichenggang@deepin.org>  Mon, 07 Apr 2025 17:08:51 +0800
+
 kglobalacceld (6.2.1-1) experimental; urgency=medium
 
   [ Aurélien COUDERC ]
