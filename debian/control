@@ -36,8 +36,8 @@ Rules-Requires-Root: no
 Package: kglobalacceld
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends},
-Breaks: libkf5globalaccel-bin (<< 5.115.0-7~),
-Replaces: libkf5globalaccel-bin (<< 5.115.0-7~),
+Breaks: libkf5globalaccel-bin (<< 5.103.0-1~),
+Replaces: libkf5globalaccel-bin (<< 5.103.0-1~),
 Description: daemon for global keyboard shortcuts on the Plasma desktop
  Daemon providing Global Keyboard Shortcut (Accelerator) functionality for the
  Plasma desktop.
