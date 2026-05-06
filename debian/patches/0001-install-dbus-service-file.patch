@@ -1,0 +1,26 @@
+Description: Install missing D-Bus service file for kglobalacceld
+ Add org.kde.kglobalaccel.service.in file and install it to
+ KDE_INSTALL_DBUSSERVICEDIR for D-Bus auto-activation.
+Author: justforlxz <justforlxz@gmail.com>
+Origin: vendor
+Forwarded: not-needed
+Last-Update: 2026-05-06
+
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -85,3 +85,8 @@ ecm_install_configured_files(
+     INPUT kglobalacceld.desktop.in
+     DESTINATION ${KDE_INSTALL_AUTOSTARTDIR} @ONLY
+ )
++
++ecm_install_configured_files(
++   INPUT org.kde.kglobalaccel.service.in
++   DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR}
++)
+--- /dev/null
++++ b/src/org.kde.kglobalaccel.service.in
+@@ -0,0 +1,4 @@
++[D-BUS Service]
++Name=org.kde.kglobalaccel
++Exec=@KDE_INSTALL_FULL_LIBEXECDIR@/kglobalacceld
++SystemdService=plasma-kglobalaccel.service
