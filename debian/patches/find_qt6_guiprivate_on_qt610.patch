@@ -1,0 +1,18 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 148f547..cf9bd46 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -40,6 +40,13 @@ set(EXCLUDE_DEPRECATED_BEFORE_AND_AT 0 CACHE STRING "Control the range of deprec
+ 
+ find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED DBus Gui Widgets)
+ 
++# Since Qt 6.10 private module targets ship as standalone CMake packages and
++# are no longer auto-created by the module's targets file, so fetch the
++# private package explicitly when needed (Qt <= 6.9 keeps old behavior).
++if (NOT TARGET Qt6::GuiPrivate)
++    find_package(Qt6GuiPrivate ${QT_MIN_VERSION} REQUIRED NO_MODULE)
++endif()
++
+ find_package(KF6Config ${KF6_MIN_VERSION} REQUIRED)
+ find_package(KF6CoreAddons ${KF6_MIN_VERSION} REQUIRED)
+ find_package(KF6Crash ${KF6_MIN_VERSION} REQUIRED)
