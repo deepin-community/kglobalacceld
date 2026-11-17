@@ -1,1 +1,2 @@
 0001-install-dbus-service-file.patch
+find_qt6_guiprivate_on_qt610.patch
